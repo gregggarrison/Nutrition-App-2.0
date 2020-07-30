@@ -8,7 +8,7 @@ import Home from './homePageFolder/Home'
 import Login from './staticComponents/Login'
 import MealPlan from './mealPlanFolder/MealPlan';
 import Nav from './staticComponents/Nav';
-import Profile from './Profile'
+import Profile from './profileFolder/Profile'
 
 const loginURL = "http://localhost:3000/login"
 const profileURL = "http://localhost:3000/profile"

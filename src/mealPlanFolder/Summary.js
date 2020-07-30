@@ -41,35 +41,33 @@ const Summary = props => {
     const pChol = ((parseFloat(totalCholesterol / lCholestDV)) * 100).toFixed(0) + "%"
 
     return (
-            <div className="row summary" >
+        <>
 
-                <div className="col-2.5">
+            <div className="col-2.5">
 
-                    <ul id="snapshot" >
-                        <h4>Daily Totals</h4>
-                        <li>Calories: {parseInt(totalCal)}  </li>
-                        <li>Fat: {parseInt(totalFat)} </li>
-                        <li>Carbs: {parseInt(totalCarbs)} </li>
-                        <li>Cholesterol: {parseInt(totalCholesterol)}</li>
-                        <li>Protein: {parseInt(totalProtein)}</li>
-                    </ul>
+                <ul id="snapshot" >
+                    <h4>Daily Totals</h4>
+                    <li>Calories: {parseInt(totalCal)}  </li>
+                    <li>Fat: {parseInt(totalFat)} </li>
+                    <li>Carbs: {parseInt(totalCarbs)} </li>
+                    <li>Cholesterol: {parseInt(totalCholesterol)}</li>
+                    <li>Protein: {parseInt(totalProtein)}</li>
+                </ul>
+            </div>
+            <div className="col-2.5">
 
-                    </div>
-                    <div className="col-2.5">
-
-                    <ul id="dv" >
-                        <h4>Daily Value %</h4>
-                        <li>Calories: {pCal}</li>
-                        <li>Fat:  {tFat} </li>
-                        <li>Carbs:  {tCarbs}</li>
-                        <li>Cholesterol: {pChol}</li>
-                    </ul>
-
-
-                </div>
+                <ul id="dv" >
+                    <h4>Daily Value %</h4>
+                    <li>Calories: {pCal}</li>
+                    <li>Fat:  {tFat} </li>
+                    <li>Carbs:  {tCarbs}</li>
+                    <li>Cholesterol: {pChol}</li>
+                </ul>
 
 
             </div>
+        </>
+
     )
 };
 
