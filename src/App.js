@@ -98,12 +98,8 @@ class App extends Component {
           })
         }
       })
-      // .then(() => this.filterMealDate())
       .then(() => this.props.history.push('/'))
   }
-
-
-
 
   logOut = () => {
     localStorage.removeItem('token')
@@ -115,27 +111,23 @@ class App extends Component {
   }
 
   addToMeals = (meal) => {
-    console.log(meal)
     this.setState({
       meals: [...this.state.meals, meal]
     })
   }
 
   addToTodayMeals = (meal) => {
-    console.log(meal)
     this.setState({
       todayMeals: [...this.state.todayMeals, meal]
     })
   }
 
   filterMealDate = () => {
-    console.log('filterdatefunciton')
     let currentMeals = this.state.meals.filter(meal => {
       let mealDate = new Date(meal.created_at).toDateString()
       let today = new Date().toDateString()
       return mealDate === today
     })
-    console.log('currentMeals', currentMeals)
     this.setState({ todayMeals: currentMeals })
   }
 
@@ -149,6 +141,19 @@ class App extends Component {
 
     fetch(mealsURL + meal.id, {
       method: "DELETE"
+    })
+  }
+
+  updateUser = (updatedUser) => {
+    this.setState({user: updatedUser})
+
+    fetch(usersURL + this.state.user.id, {
+      method: "PATCH",
+      headers: {
+        "authorization": `bearer ${localStorage.token}`,
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({user: updatedUser})
     })
   }
 
@@ -169,7 +174,9 @@ class App extends Component {
                   todayMeals={this.state.todayMeals}
                   meals={this.state.meals}
                   date={this.state.date}
-                  user={this.state.user} />}
+                  user={this.state.user} 
+                  updateUser={this.updateUser}
+                  />}
 
               />
               <Route exact path="/meal-plan" render={(routerProps) =>

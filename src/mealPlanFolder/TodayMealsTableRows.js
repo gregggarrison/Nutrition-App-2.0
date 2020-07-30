@@ -3,7 +3,6 @@ import React from 'react'
 function TodayMealsTableRows(props) {
 
     function handleClick(event) {
-        console.log('it clicked')
         props.deleteMeal(props.meal)
     }
 

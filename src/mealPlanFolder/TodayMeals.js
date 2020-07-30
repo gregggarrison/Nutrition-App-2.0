@@ -1,6 +1,5 @@
 import React from 'react'
 import TodayMealsTableRows from './TodayMealsTableRows'
-import Summary from './Summary'
 
 function TodayMeals(props) {
     const { todayMeals } = props
@@ -39,7 +38,6 @@ function TodayMeals(props) {
                     {showMeals}
                 </tbody>
             </table>
-
         </div>
     )
 }

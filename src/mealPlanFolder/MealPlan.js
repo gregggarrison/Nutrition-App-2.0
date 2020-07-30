@@ -1,12 +1,5 @@
-import { Route, withRouter, Redirect } from 'react-router-dom'
-
 import React from 'react'
 import SearchForm from './SearchForm'
-import Header from '../staticComponents/Header'
-import Nav from '../staticComponents/Nav'
-import AllMeals from '../allMealsFolder/AllMeals'
-import Summary from './Summary'
-
 
 function MealPlan(props) {
 
@@ -23,7 +16,6 @@ function MealPlan(props) {
                     user={props.user}
                 />
             </>
-
         </div>
     )
 }

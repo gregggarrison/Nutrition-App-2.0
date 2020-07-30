@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import MealsTable from './MealsTable'
 import TodayMeals from './TodayMeals'
-import Summary from './Summary'
 
 class SearchForm extends Component {
 
