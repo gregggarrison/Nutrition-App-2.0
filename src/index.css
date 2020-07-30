@@ -1,13 +1,238 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+nav{
+    display: flex;
+    margin-left: 1rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.nav-link{
+    margin-left: 4px;
+}
+
+.img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 750px;
+    height: 400px;  
+    padding-bottom: 3%;
+  }
+  
+  .search-img{
+    max-width: -webkit-fill-available;
+  }
+  
+  a.blog-header-logo text-dark{
+    font-size: xx-large;
+  }
+  
+  div.col-4 text-center {
+    font-size: xxx-large;
+  }
+  
+  div.col-4 text-center {
+    font-size: xxx-large;
+  }
+  
+  div.a.blog-header-logo text-dark {
+    font-size: xxx-large;
+  }
+  
+  .recipes {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  img {
+    height: 413.8px;
+  }
+  
+  .text-left img{
+    padding-bottom: 3%;
+  }
+  
+  p.intro {
+    align-items: center;
+    justify-content: center;
+    padding-top: 1%;
+  }
+  
+  li{
+    list-style-type: none;
+  }
+  
+  div.about-me{
+    padding-top: 4%;
+  }
+
+  ul{
+      margin-right: 5px;
+  }
+
+  #stupid{
+      display: flex;
+      flex-direction: column;
+  }
+
+  img.search-img{
+    height: 324px;
+    width: 300px;
+  }
+
+  .form-container {
+    display: flex;
+    /* height: 27px; */
+    /* padding-bottom: 5%; */
+    /* padding-top: 5%; */
+    width: 350px;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    justify-content: space-between;
+  }
+
+  #clear-btn{
+    cursor: pointer;
+    box-shadow: rgba(255, 255, 255, 0.05) 0px 3px 20px;
+    border-width: initial;
+    background-color: grey;
+    color: white;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    outline: none;
+  }
+
+  body {
+    font-family: 'open sans', sans-serif;
+    font-size: 16px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  thead th {
+    text-align: left;
+    border-bottom: 2px solid black;
+  }
+  
+  thead button {
+    border: 0;
+    border-radius: none;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: inherit;
+    padding: 0.5em;
+    margin-bottom: 1px;
+  }
+  
+  thead button.ascending::after {
+    content: '👇';
+    display: inline-block;
+    margin-left: 1em;
+  }
+  
+  thead button.descending::after {
+    content: '☝️';
+    display: inline-block;
+    margin-left: 1em;
+  }
+  
+  tbody td {
+    padding: 0.5em;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  tbody tr:hover {
+    background-color: #eee;
+  }
+  
+.date-weather{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 250px;
+}
+.weather-img{
+  height: 50px;
+  width: 50px;
+}
+
+
+.fetch-img{
+  width: 50px;
+  height: 50px;
+}
+
+.hidden{
+  display: none;
+}
+
+.summary-totals.p{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 500px;
+}
+
+.table td{
+  vertical-align: middle;
+}
+
+input#search-qty{
+  width: 45px;
+  font-weight: bold;
+}
+
+header{
+  background-color: rgba(178, 208, 218, 0.336);
+
+  padding: 1%;
+  padding-top: 3%;
+}
+
+.nav-scroller {
+  background-color: beige;
+}
+
+nav{
+  background-color: beige;
+  margin-right: 20px;
+}
+
+
+.new-recipe{
+  width: tofit;
+}
+
+.form-row{
+  padding-top: 3px;
+  display: flex;
+  flex-direction: row;
+}
+
+
+.ingredient-search{
+  padding-top: 15px;
+}
+
+/* #search-form {
+  width: 333 px;
+} */
+
+.label-container {
+  width: 300px;
+}
+
+#login{
+  display: inline;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-form{
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  margin-left: 40%;
 }
