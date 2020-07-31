@@ -34,6 +34,13 @@ class ProfileForm extends Component {
         this.props.updateUser(this.state)
     }
 
+    getHeight = () => {
+        // console.log(this.props.user.height)
+    }
+
+    componentDidMount(){
+        this.getHeight()
+    }
     render() {
         return (
             
@@ -41,10 +48,10 @@ class ProfileForm extends Component {
                 <div className="col-7">
                     <form className="profile-form" onSubmit={this.handleSubmit}>
                         <div className="form-row">
-                            <div class="form-group col-md-3">
+                            <div className="form-group col-md-3">
                                 <label className='form-label'>Username:</label>
                             </div>
-                            <div class="form-group col-md-3">
+                            <div className="form-group col-md-3">
                                 <input
                                     className='form-input'
                                     defaultValue={this.props.user.username}
@@ -56,10 +63,10 @@ class ProfileForm extends Component {
                         </div>
 
                         <div className="form-row">
-                            <div class="form-group col-md-3">
+                            <div className="form-group col-md-3">
                                 <label className='form-label'>Age:</label>
                             </div>
-                            <div class="form-group col-md-3">
+                            <div className="form-group col-md-3">
                                 <input
                                     className='form-input'
                                     defaultValue={this.props.user.age}
@@ -71,10 +78,10 @@ class ProfileForm extends Component {
                         </div>
 
                         <div className="form-row">
-                            <div class="form-group col-md-3">
+                            <div className="form-group col-md-3">
                                 <label className='form-label'>Sex:</label>
                             </div>
-                            <div class="form-group col-md-3">
+                            <div className="form-group col-md-3">
                                 <input
                                     onChange={this.handleChange}
                                     className='form-input'
@@ -86,10 +93,10 @@ class ProfileForm extends Component {
                         </div>
 
                         <div className="form-row">
-                            <div class="form-group col-md-3">
+                            <div className="form-group col-md-3">
                                 <label className='form-label'>Weight (lbs):</label>
                             </div>
-                            <div class="form-group col-md-3">
+                            <div className="form-group col-md-3">
                                 <input
                                     className='form-input'
                                     defaultValue={this.props.user.weight}
@@ -102,15 +109,16 @@ class ProfileForm extends Component {
                         </div>
 
                         <div className="form-row">
-                            <div class="form-group col-md-3">
+                            <div className="form-group col-md-3">
                                 <label className='form-label'>Height (ft/in) :</label>
                             </div>
-                            <div class="form-group col-md-3">
+                            <div className="form-group col-md-3">
                                 <div className="feet-inch">
                                     <input
                                         className='form-input height'
                                         name="feet"
                                         type="number"
+                                        defaultValue={this.getHeight}
                                     />
                                     <input
                                         className='form-input height'
@@ -132,7 +140,7 @@ class ProfileForm extends Component {
                                     checked={this.state.isChecked}
                                     onChange={this.handleCheck}
                                 />
-                                <label className="form-check-label" for="gridCheck">Edit? </label>
+                                <label className="form-check-label" >Edit? </label>
                             </div>
                         </div>
                         <button

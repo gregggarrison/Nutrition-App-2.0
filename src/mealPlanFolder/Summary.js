@@ -1,8 +1,9 @@
 import React from 'react'
 
+import NutritionLabel from '../mealPlanFolder/NutritionLabel'
+
 const Summary = props => {
 
-    console.log(props)
     const totalCal = props.todayMeals.reduce(
         (prevValue, currentValue) => {
             return prevValue + +currentValue.calories
@@ -66,6 +67,8 @@ const Summary = props => {
 
 
             </div>
+
+            {/* <NutritionLabel todayMeals={props.todayMeals} /> */}
         </>
 
     )
