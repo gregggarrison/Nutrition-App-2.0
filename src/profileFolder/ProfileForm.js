@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import Summary from '../mealPlanFolder/Summary'
 
 class ProfileForm extends Component {
@@ -34,16 +33,23 @@ class ProfileForm extends Component {
         this.props.updateUser(this.state)
     }
 
-    getHeight = () => {
-        // console.log(this.props.user.height)
+    setFeet = () => {
+        let feet = Math.floor((this.props.user.height) / 12)
+        return feet
     }
 
-    componentDidMount(){
-        this.getHeight()
+    setInches = () => {
+        let totalFeet = (this.props.user.height) / 12
+        let feetOnly = Math.floor(totalFeet) //*** */
+        let remainder = totalFeet - feetOnly
+        let inches = (remainder * 12).toFixed(0) //*** */
+        return inches
     }
+
     render() {
+
         return (
-            
+
             <div className="row summary">
                 <div className="col-7">
                     <form className="profile-form" onSubmit={this.handleSubmit}>
@@ -103,7 +109,6 @@ class ProfileForm extends Component {
                                     name="weight"
                                     type="text"
                                     onChange={this.handleChange}
-
                                 />
                             </div>
                         </div>
@@ -114,19 +119,7 @@ class ProfileForm extends Component {
                             </div>
                             <div className="form-group col-md-3">
                                 <div className="feet-inch">
-                                    <input
-                                        className='form-input height'
-                                        name="feet"
-                                        type="number"
-                                        defaultValue={this.getHeight}
-                                    />
-                                    <input
-                                        className='form-input height'
-                                        defaultValue={this.props.user.height}
-                                        name="height"
-                                        type="text"
-                                        onChange={this.handleChange}
-                                    />
+                                    <p id='conversion' className='form-p' >{this.setFeet()}' {this.setInches()}"</p>
                                 </div>
                             </div>
                         </div>
