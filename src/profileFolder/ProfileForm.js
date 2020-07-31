@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Summary from '../mealPlanFolder/Summary'
+import Summary from './Summary'
 
 class ProfileForm extends Component {
 
