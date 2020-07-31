@@ -14,6 +14,9 @@ const loginURL = "http://localhost:3000/login"
 const profileURL = "http://localhost:3000/profile"
 const mealsURL = "http://localhost:3000/meals/"
 const usersURL = "http://localhost:3000/users/"
+const key = process.env.REACT_APP_WEATHER_API_KEY
+
+const weatherURL =  "http://api.weatherstack.com/current?units=f&query=Denver&access_key=" + key
 
 class App extends Component {
 
@@ -23,13 +26,24 @@ class App extends Component {
     todayMeals: [],
     date: "",
     weather: [],
+    
   }
 
   componentDidMount() {
     this.getDate()
+    this.getWeather()
     this.validateUser()
     this.filterMealDate()
+    
   }
+
+
+  getWeather = () => {
+    fetch(weatherURL)
+      .then(response => response.json())
+      // .then(console.log)
+      .then(weather => this.setState({ weather }))
+    }
 
   validateUser = () => {
     const token = localStorage.token
@@ -165,7 +179,7 @@ class App extends Component {
         <>
           <div className="App">
             <div className="container">
-              <Header date={this.state.date} weather={this.state.weather} logOut={this.logOut} />
+              <Header date={this.state.date} weather={this.state.weather} logOut={this.logOut} weather={this.state.weather}/>
               <Nav date={this.state.date} filterMealDate={this.filterMealDate} />
               <Route exact path="/" render={(routerProps) => <Home />} />
               <Route exact path="/all-meals" render={(routerProps) => <AllMeals meals={this.state.meals} date={this.state.date} />} />
