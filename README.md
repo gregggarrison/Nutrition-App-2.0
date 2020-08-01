@@ -1,68 +1,32 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Nutrition App	
 
-## Available Scripts
+This is a tool where a user can (in some cases eventually) write their own blogs, create/share recipes, and track/plan their meals.
 
-In the project directory, you can run:
+About:
 
-### `yarn start`
+It has a food search / meal plan option where you can type in the food/ingredient of your choice and returns an image as well as a table row of pedigree info about said query.  You can click on the image then it expands the image and also renders a nutritional label bearing the nutrient values.  In the table you have the ability to manipulate the quantity consumed and the corresponding values change inline with change.  From there a user has an option to clear the search and start over or to save it to their meals.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Below the meal search/results table is another table showing all of current days saved meals which can also be deleted.  There is another link to “All meals” which is a table that is sortable by the column headers.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+There is also Profile route that renders all of the user’s pedigree info such as: username, age, sex, height, and weight that is editable as well.  The Profile page also provides nutritional label snapshot reflecting totals for the day as well as a pie chart indicating the source of calories for the day (fat, protein, or carbs).  
 
-### `yarn test`
+The app has full auth and does not offer the above mentioned features unless they are logged in.  A user also has the option to sign up by clicking the bottom of the login page.  The end game for this is that a user can enter and track their weight as well as their personalized nutrient intake (ie 2,000 calories a day) and be able to plan meals and track their status in real time.  
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Resources:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+I used the Nutrionix API whose documentation can be found  at https://developer.nutritionix.com/docs/v2.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Front-end
+npx create-react-app 
+For routing  I imported { Route, withRouter } from 'react-router-dom’
 
-### `yarn eject`
+Back-end
+I used Ruby on Rails for the backend
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Gregg Garrison
+https://github.com/gregggarrison
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
