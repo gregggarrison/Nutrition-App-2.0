@@ -14,9 +14,6 @@ const loginURL = "http://localhost:3000/login"
 const profileURL = "http://localhost:3000/profile"
 const mealsURL = "http://localhost:3000/meals/"
 const usersURL = "http://localhost:3000/users/"
-const key = process.env.REACT_APP_WEATHER_API_KEY
-
-const weatherURL =  "http://api.weatherstack.com/current?units=f&query=Denver&access_key=" + key
 
 class App extends Component {
 
@@ -24,26 +21,14 @@ class App extends Component {
     meals: [],
     user: {},
     todayMeals: [],
-    date: "",
-    weather: [],
-    
+    date: ""
   }
 
   componentDidMount() {
     this.getDate()
-    this.getWeather()
     this.validateUser()
     this.filterMealDate()
-    
   }
-
-
-  getWeather = () => {
-    fetch(weatherURL)
-      .then(response => response.json())
-      // .then(console.log)
-      .then(weather => this.setState({ weather }))
-    }
 
   validateUser = () => {
     const token = localStorage.token
@@ -62,7 +47,6 @@ class App extends Component {
           })
         }).then(() => this.filterMealDate())
     }
-
   }
 
   login = (user) => {
@@ -159,15 +143,15 @@ class App extends Component {
   }
 
   updateUser = (updatedUser) => {
-    this.setState({user: updatedUser})
-
+    this.setState({ user: updatedUser })
+    
     fetch(usersURL + this.state.user.id, {
       method: "PATCH",
       headers: {
         "authorization": `bearer ${localStorage.token}`,
         "content-type": "application/json"
       },
-      body: JSON.stringify({user: updatedUser})
+      body: JSON.stringify({ user: updatedUser })
     })
   }
 
@@ -179,7 +163,7 @@ class App extends Component {
         <>
           <div className="App">
             <div className="container">
-              <Header date={this.state.date} weather={this.state.weather} logOut={this.logOut} weather={this.state.weather}/>
+              <Header date={this.state.date} logOut={this.logOut} />
               <Nav date={this.state.date} filterMealDate={this.filterMealDate} />
               <Route exact path="/" render={(routerProps) => <Home />} />
               <Route exact path="/all-meals" render={(routerProps) => <AllMeals meals={this.state.meals} date={this.state.date} />} />
@@ -188,9 +172,9 @@ class App extends Component {
                   todayMeals={this.state.todayMeals}
                   meals={this.state.meals}
                   date={this.state.date}
-                  user={this.state.user} 
+                  user={this.state.user}
                   updateUser={this.updateUser}
-                  />}
+                />}
 
               />
               <Route exact path="/meal-plan" render={(routerProps) =>

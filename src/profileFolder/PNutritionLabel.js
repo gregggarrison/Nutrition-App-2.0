@@ -126,10 +126,6 @@ const PNutritionLabel = props => {
                     </tr>
                 </tbody>
             </table>
-
-
-
-            
         </div>
     )
 }

@@ -147,7 +147,6 @@ class ProfileForm extends Component {
                     <Summary todayMeals={this.props.todayMeals} />
                 </div>
             </div >
-
         )
     }
 }

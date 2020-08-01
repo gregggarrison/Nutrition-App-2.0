@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Header = (props) => {
-    const currentWeather = props.weather.current
 
     const handleClick = () => props.logOut()
 
